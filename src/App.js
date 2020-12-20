@@ -56,7 +56,10 @@ export default class App extends Component {
       <div>
         <BasicFooter
           title="Company name"
-          subtitle="Company slogan/brief about section, capped off at 20% vw to ensure it flows nicely"
+          subtitle="Brief sentence or two about yourself/company.
+          Maybe your city? Address? Where your shop is?"
+          phoneNumber="555-555-5555"
+          email="testing@test.com"
           primaryFontColor="#eaeaea"
           secondaryFontColor="#dddddd"
           logo="https://i.ibb.co/r4C7pF2/logoipsum.png"
@@ -64,11 +67,12 @@ export default class App extends Component {
           copyrightColor="#aaaaaa"
           backgroundColor="#4b4a4a"
           pages={pages}
-          github=""
-          linkedin=""
-          twitter=""
-          angellist=""
-          iconSize="2rem"
+          github="github.com"
+          linkedin="linkedin.com"
+          twitter="twitter.com"
+          youtube="yt.com"
+          facebook="fb.com"
+          iconSize="1.5rem"
         />
       </div>
     );

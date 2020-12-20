@@ -8,6 +8,7 @@ import {
   faYoutubeSquare,
   faGithub,
 } from '@fortawesome/free-brands-svg-icons';
+import { faMobileAlt, faEnvelopeOpen } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
 
 export default class BasicFooterComponent extends Component {
@@ -15,6 +16,8 @@ export default class BasicFooterComponent extends Component {
     let {
       title,
       subtitle,
+      phoneNumber,
+      email,
       primaryFontColor,
       secondaryFontColor,
       logo,
@@ -40,17 +43,33 @@ export default class BasicFooterComponent extends Component {
           ''
         )}
         <div>
-          {title !== '' || undefined ? (
+          {title !== undefined ? (
             <h3 style={{ color: primaryFontColor || '#fefefe' }}>{title}</h3>
           ) : (
             ''
           )}
-          {subtitle !== '' || undefined ? (
+          {subtitle !== undefined ? (
             <p
               className="footer__info--subtitle"
-              style={{ color: secondaryFontColor }}
+              style={{ color: secondaryFontColor || '#c4c4c4' }}
             >
               {subtitle}
+            </p>
+          ) : (
+            ''
+          )}
+          <br />
+          {phoneNumber !== undefined ? (
+            <p style={{ color: secondaryFontColor || '#c4c4c4' }}>
+              <FontAwesomeIcon icon={faMobileAlt} /> {phoneNumber}
+            </p>
+          ) : (
+            ''
+          )}
+
+          {email !== undefined ? (
+            <p style={{ color: secondaryFontColor || '#c4c4c4' }}>
+              <FontAwesomeIcon icon={faEnvelopeOpen} /> {email}
             </p>
           ) : (
             ''
@@ -61,85 +80,7 @@ export default class BasicFooterComponent extends Component {
 
     const socialMedia = (
       <div className="socialIcons" style={{ fontSize: iconSize }}>
-        <a
-          href={facebook}
-          target="_blank"
-          rel="noreferrer"
-          className="socialIcon"
-          style={{ color: iconColor }}
-        >
-          {facebook !== undefined ? (
-            <FontAwesomeIcon icon={faFacebookSquare} />
-          ) : (
-            ''
-          )}
-        </a>
-        <a
-          href={linkedin}
-          target="_blank"
-          rel="noreferrer"
-          className="socialIcon"
-          style={{ color: iconColor }}
-        >
-          {linkedin !== undefined ? <FontAwesomeIcon icon={faLinkedin} /> : ''}
-        </a>
-        <a
-          href={twitter}
-          target="_blank"
-          rel="noreferrer"
-          className="socialIcon"
-          style={{ color: iconColor }}
-        >
-          {twitter !== undefined ? (
-            <FontAwesomeIcon icon={faTwitterSquare} />
-          ) : (
-            ''
-          )}
-        </a>
-        <a
-          href={angellist}
-          target="_blank"
-          rel="noreferrer"
-          className="socialIcon"
-          style={{ color: iconColor }}
-        >
-          {angellist !== undefined ? (
-            <FontAwesomeIcon icon={faAngellist} />
-          ) : (
-            ''
-          )}
-        </a>
-        <a
-          href={youtube}
-          target="_blank"
-          rel="noreferrer"
-          className="socialIcon"
-          style={{ color: iconColor }}
-        >
-          {youtube !== undefined ? (
-            <FontAwesomeIcon icon={faYoutubeSquare} />
-          ) : (
-            ''
-          )}
-        </a>
-        <a
-          href={github}
-          target="_blank"
-          rel="noreferrer"
-          className="socialIcon"
-          style={{ color: iconColor }}
-        >
-          {github !== undefined ? <FontAwesomeIcon icon={faGithub} /> : ''}
-        </a>
-      </div>
-    );
-
-    const contact = (
-      <div className="footer__contact">
-        <h4 className="footer__pageTitle">Contact Us!</h4>
-        <h4 className="footer__pageList">555-555-5555</h4>
-        <h4 className="footer__pageList">Email: testing@test.com</h4>
-        <div className="socialIcons" style={{ fontSize: iconSize }}>
+        {facebook !== undefined ? (
           <a
             href={facebook}
             target="_blank"
@@ -147,12 +88,14 @@ export default class BasicFooterComponent extends Component {
             className="socialIcon"
             style={{ color: iconColor }}
           >
-            {facebook !== undefined ? (
-              <FontAwesomeIcon icon={faFacebookSquare} />
-            ) : (
-              ''
-            )}
+            {' '}
+            <FontAwesomeIcon icon={faFacebookSquare} />{' '}
           </a>
+        ) : (
+          ''
+        )}
+
+        {linkedin !== undefined ? (
           <a
             href={linkedin}
             target="_blank"
@@ -160,12 +103,13 @@ export default class BasicFooterComponent extends Component {
             className="socialIcon"
             style={{ color: iconColor }}
           >
-            {linkedin !== undefined ? (
-              <FontAwesomeIcon icon={faLinkedin} />
-            ) : (
-              ''
-            )}
+            <FontAwesomeIcon icon={faLinkedin} />
           </a>
+        ) : (
+          ''
+        )}
+
+        {twitter !== undefined ? (
           <a
             href={twitter}
             target="_blank"
@@ -173,12 +117,13 @@ export default class BasicFooterComponent extends Component {
             className="socialIcon"
             style={{ color: iconColor }}
           >
-            {twitter !== undefined ? (
-              <FontAwesomeIcon icon={faTwitterSquare} />
-            ) : (
-              ''
-            )}
+            <FontAwesomeIcon icon={faTwitterSquare} />
           </a>
+        ) : (
+          ''
+        )}
+
+        {angellist !== undefined ? (
           <a
             href={angellist}
             target="_blank"
@@ -186,12 +131,13 @@ export default class BasicFooterComponent extends Component {
             className="socialIcon"
             style={{ color: iconColor }}
           >
-            {angellist !== undefined ? (
-              <FontAwesomeIcon icon={faAngellist} />
-            ) : (
-              ''
-            )}
+            <FontAwesomeIcon icon={faAngellist} />{' '}
           </a>
+        ) : (
+          ''
+        )}
+
+        {youtube !== undefined ? (
           <a
             href={youtube}
             target="_blank"
@@ -199,12 +145,14 @@ export default class BasicFooterComponent extends Component {
             className="socialIcon"
             style={{ color: iconColor }}
           >
-            {youtube !== undefined ? (
-              <FontAwesomeIcon icon={faYoutubeSquare} />
-            ) : (
-              ''
-            )}
+            {' '}
+            <FontAwesomeIcon icon={faYoutubeSquare} />{' '}
           </a>
+        ) : (
+          ''
+        )}
+
+        {github !== undefined ? (
           <a
             href={github}
             target="_blank"
@@ -212,9 +160,11 @@ export default class BasicFooterComponent extends Component {
             className="socialIcon"
             style={{ color: iconColor }}
           >
-            {github !== undefined ? <FontAwesomeIcon icon={faGithub} /> : ''}
+            <FontAwesomeIcon icon={faGithub} />
           </a>
-        </div>
+        ) : (
+          ''
+        )}
       </div>
     );
 
@@ -232,11 +182,12 @@ export default class BasicFooterComponent extends Component {
             <div className="footer__firstRow">
               {info}
 
-              {/* {socialMedia} */}
-
-              <div className="footer__pages">
+              <div
+                className="footer__pages"
+                style={{ color: secondaryFontColor || '#e8e8e8' }}
+              >
                 {pages.map((page, index) => (
-                  <div key={index} className="footer__pageListTest">
+                  <div key={index} className="footer__pageList">
                     <h4 className="footer__pageTitle">{page.title}</h4>
                     {page.pageList.map((pageList, index) => (
                       <div key={index}>
@@ -245,19 +196,18 @@ export default class BasicFooterComponent extends Component {
                           target="_blank"
                           rel="noreferrer"
                         >
-                          <h4 className="footer__pageList">{pageList.name}</h4>
+                          <h4 className="footer__pageLink">{pageList.name}</h4>
                         </a>
                       </div>
                     ))}
                   </div>
                 ))}
               </div>
-
-              {contact}
             </div>
           )}
 
           <div className="footer__secondRow">
+            {socialMedia}
             <p style={{ color: copyrightColor }}>
               {' '}
               © {new Date().getFullYear()} {copyright}
@@ -273,6 +223,8 @@ BasicFooterComponent.propTypes = {
   backgroundColor: PropTypes.string,
   title: PropTypes.string,
   subtitle: PropTypes.string,
+  phoneNumber: PropTypes.string,
+  email: PropTypes.string,
   primaryFontColor: PropTypes.string,
   secondaryFontColor: PropTypes.string,
   logo: PropTypes.string,
@@ -285,4 +237,15 @@ BasicFooterComponent.propTypes = {
   facebook: PropTypes.string,
   angellist: PropTypes.string,
   youtube: PropTypes.string,
+  pages: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string,
+      pageList: PropTypes.arrayOf(
+        PropTypes.shape({
+          name: PropTypes.string,
+          link: PropTypes.string,
+        })
+      ),
+    })
+  ),
 };

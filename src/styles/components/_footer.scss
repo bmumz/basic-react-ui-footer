@@ -4,28 +4,14 @@
 }
 
 .footer {
-  padding: $s-size $m-size;
-}
-
-.footer__firstRowAlt {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  padding: $s-size $xl-size;
 }
 
 .footer__secondRow {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: $s-size;
-  padding-top: $xs-size;
-}
-
-.footer__secondColumn {
-  padding: 0 $m-size;
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
+  padding-top: $m-size;
 }
 
 .footer__logo {
@@ -34,56 +20,38 @@
 }
 
 .footer__pages {
-  display: flex;
-  justify-content: flex-start;
-  color: #e8e8e8;
-  width: 100vw;
   padding-top: $s-size;
+  display: flex;
+  justify-content: space-between;
 }
 
 .footer__pageTitle {
   font-weight: 600;
 }
 
-.footer__pageList {
+.footer__pageLink {
   font-weight: 400;
-}
-
-.tester {
-  width: 50px;
-}
-
-.footer__pageListTest {
-  margin: $m-size;
-}
-
-.footer__contact {
-  font-weight: 400;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  color: #dddddd;
-  width: 20vw;
-  margin: $m-size;
 }
 
 @media (min-width: $desktop-breakpoint) {
-  .footer__secondColumn {
-    padding: 0;
-  }
   .footer__info {
     margin-right: $m-size;
-    width: 20vw;
+    width: 25vw;
   }
 
   .footer__firstRow {
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: row;
     padding: x$s-size;
   }
 
   .footer__pages {
     display: flex;
     justify-content: center;
+    width: 50vw;
+  }
+
+  .footer__pageList {
+    margin: $m-size;
   }
 }
