@@ -1,5 +1,7 @@
 .test {
   background-color: #cc9b94;
+  display: flex;
+  flex-direction: column-reverse;
   min-height: 100vh;
 }
 

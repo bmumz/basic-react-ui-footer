@@ -10,6 +10,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import { faMobileAlt, faEnvelopeOpen } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
+import './styles/styles.scss';
 
 export default class BasicFooterComponent extends Component {
   render() {
