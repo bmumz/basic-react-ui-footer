@@ -1,70 +1,195 @@
-# Getting Started with Create React App
+<h1>Basic React UI - Footer</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- PROJECT LOGO -->
+<br />
+<p >
 
-## Available Scripts
+  <p>
+Part of a series of reusable React Components, to be available as npm packages! Basic React UI - Footer. Simply enter values in as props, and the rest is taken care of for you!
+    <br />
+    <a href="https://github.com/bmumz/basic-react-ui-footer/blob/master/README.md"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+  <!-->  <a href="https://you-go-girl.vercel.app">View Demo</a> -->
+    ·
+    <a href="https://github.com/bmumz/basic-react-ui-footer/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/bmumz/basic-react-ui-footer/issues">Request Feature</a>
+  </p>
+</p>
 
-In the project directory, you can run:
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgements">Acknowledgements</a></li>
+  </ol>
+</details>
 
-### `npm start`
+<!-- ABOUT THE PROJECT -->
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## About The Project
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+[![Product Name Screen Shot][product-screenshot]
 
-### `npm test`
+#### Props You Can Specify
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+| PROP               | PROP-TYPE | DESCRIPTION                                                                                   |
+| ------------------ | --------- | --------------------------------------------------------------------------------------------- |
+| title              | `String`  | Required. Ideally business name/your name.                                                    |
+| logo               | `String`  | Optional. Include image URL to your logo. Goes above title.                                   |
+| subtitle           | `String`  | Optional. Brief description about yourself/business.                                          |
+| phonenumber        | `String`  | Optional.                                                                                     |
+| email              | `String`  | Optional.                                                                                     |
+| primaryFontColor   | `String`  | Optional. Default is off-white                                                                |
+| secondaryFontColor | `String`  | Optional. Default is slightly darker off-white.                                               |
+| copyright          | `String`  | Required. Your name/business name.                                                            |
+| copyrightColor     | `String`  | Optional. Default is a light grey.                                                            |
+| backgroundColor    | `String`  | Optional. Default is mid-dark grey.                                                           |
+| facebook           | `String`  | Optional. Link your Facebook profile!                                                         |
+| github             | `String`  | Optional. Link your Github profile!                                                           |
+| linkedin           | `String`  | Optional. Link your LinkedIn profile!                                                         |
+| twitter            | `String`  | Optional. Link your Twitter profile.                                                          |
+| angellist          | `String`  | Optional. Link your AngelList profile.                                                        |
+| youtube            | `String`  | Optional. Link your Youtube profile.                                                          |
+| iconSize           | `String`  | Optional. Default is 1.5rem.                                                                  |
+| iconColor          | `String`  | Optional. Default is off-white. \*if you specify this, note that on hover effects won't work! |
 
-### `npm run build`
+#### Secondary Navigation Object (Optional)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Create a "pages" object in the component you are using <BasicFooter />, like this, for example:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```sh
+const pages = [
+      {
+        title: 'Company',
+        pageList: [
+          {
+            name: 'About',
+            link: '/about',
+          },
+          {
+            name: 'Locations',
+            link: '/careers',
+          },
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+          {
+            name: 'Careers',
+            link: '/careers',
+          },
+        ],
+      },
+      {
+        title: 'Legal',
+        pageList: [
+          {
+            name: 'Privacy',
+            link: '/privacy',
+          },
+          {
+            name: 'Terms',
+            link: '/terms',
+          },
+        ],
+      },
+      {
+        title: 'Help Center',
+        pageList: [
+          {
+            name: 'FAQ',
+            link: '/faq',
+          },
+          {
+            name: 'Return Policy',
+            link: '/returnpolicy',
+          },
+        ],
+      },
+    ];
+```
 
-### `npm run eject`
+| PROP          | PROP-TYPE | DESCRIPTION                                                                                          |
+| ------------- | --------- | ---------------------------------------------------------------------------------------------------- |
+| title         | `String`  | Required. A nav heading for each list of pages.                                                      |
+| pageList      | `Array`   | Required. An array of objects with `name` and `link` for each page you'd like in your secondary nav. |
+| pageList.name | `String`  | Required. Name of page.                                                                              |
+| pageList.link | `String`  | Required. Link to page.                                                                              |
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Built With
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- [React](https://reactjs.org/)
+- [SASS](https://sass-lang.com/documentation/syntax)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<!-- GETTING STARTED -->
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Getting Started
 
-## Learn More
+### To run the project:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Clone the repo
+   ```sh
+   git clone https://github.com/bmumz/basic-react-ui-footer
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
+3. Run npm start
+   ```sh
+   npm start
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<!-- CONTRIBUTING -->
 
-### Code Splitting
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Any contributions you make are **greatly appreciated**.
 
-### Analyzing the Bundle Size
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<!-- LICENSE -->
 
-### Making a Progressive Web App
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Distributed under the MIT License. See `LICENSE` for more information.
 
-### Advanced Configuration
+<!-- CONTACT -->
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Contact
 
-### Deployment
+Your Name - [Portfolio](https://www.brandimummery.dev) - [LinkedIn](https://www.linkedin.com/in/brandimummery) [@brandiCodes on Twitter](https://twitter.com/brandiCodes) - brandimummery@gmail.com
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+<!-- Project Link: [https://github.com/bmumz/you-go-girl](https://github.com/bmumz/you-go-girl) -->
 
-### `npm run build` fails to minify
+<!-- ACKNOWLEDGEMENTS -->
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Acknowledgements
+
+- [Best-README-Template](https://github.com/othneildrew/Best-README-Template/blob/master/README.md)
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
+[product-screenshot]: https://i.ibb.co/qnrGMQ0/Screen-Shot-2020-12-20-at-6-39-59-PM.png
